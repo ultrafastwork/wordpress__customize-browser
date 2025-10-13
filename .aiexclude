@@ -1,0 +1,7 @@
+.vscode/sftp.json
+
+.env
+.sql
+.git
+
+!wp-includes
