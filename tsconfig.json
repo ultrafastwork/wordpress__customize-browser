@@ -1,0 +1,11 @@
+{
+	"compilerOptions": {
+		"target": "ES2015",
+		"module": "ESNext",
+		"strict": true,
+		"noEmit": true,
+		"skipLibCheck": false,
+		"lib": ["ES2015", "DOM"]
+	},
+	"include": ["*.d.ts"]
+}
