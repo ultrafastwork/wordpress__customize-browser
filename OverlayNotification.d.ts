@@ -5,8 +5,7 @@ export interface OverlayNotification extends Notification {
 	handleEscape(event: JQuery.Event): void;
 }
 
-export interface OverlayNotificationConstructor
-	extends NotificationConstructor {
+export interface OverlayNotificationConstructor extends NotificationConstructor {
 	new (code?: string, params?: object): OverlayNotification;
 	extend(
 		protoProps: object,

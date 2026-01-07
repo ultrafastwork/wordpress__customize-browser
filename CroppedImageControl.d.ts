@@ -38,8 +38,7 @@ export interface CroppedImageControl extends MediaControl {
 	setImageFromAttachment(attachment: any): void; // TODO
 }
 
-export interface CroppedImageControlConstructor
-	extends MediaControlConstructor {
+export interface CroppedImageControlConstructor extends MediaControlConstructor {
 	new (id?: string, options?: object): CroppedImageControl;
 	extend(
 		protoProps: object,

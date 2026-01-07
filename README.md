@@ -1,4 +1,4 @@
-# @types/wordpress__customize-browser
+# @types/wordpress\_\_customize-browser
 
 TypeScript definitions for the WordPress Customize Browser API.
 
@@ -33,15 +33,15 @@ The WordPress Customizer API allows developers to create custom controls, sectio
 const customize = wp.customize;
 
 // Create a new setting
-customize.create('my_setting', 'default value', {
-  id: 'my_setting'
+customize.create("my_setting", "default value", {
+	id: "my_setting",
 });
 
 // Get a setting
-const setting = customize('my_setting');
+const setting = customize("my_setting");
 if (setting) {
-  // Update the setting value
-  setting.set('new value');
+	// Update the setting value
+	setting.set("new value");
 }
 ```
 
@@ -49,20 +49,20 @@ if (setting) {
 
 ```typescript
 // In the preview iframe
-wp.customize.preview.bind('ready', function() {
-  // The preview is ready
-  console.log('Preview is ready');
+wp.customize.preview.bind("ready", function () {
+	// The preview is ready
+	console.log("Preview is ready");
 });
 
 // Bind to custom events
-wp.customize.preview.bind('custom_event', function(data) {
-  // Handle the custom event
-  console.log('Custom event received:', data);
+wp.customize.preview.bind("custom_event", function (data) {
+	// Handle the custom event
+	console.log("Custom event received:", data);
 });
 
 // With multiple arguments
-wp.customize.preview.bind('complex_event', function(data, moreData) {
-  console.log('Received data:', data, moreData);
+wp.customize.preview.bind("complex_event", function (data, moreData) {
+	console.log("Received data:", data, moreData);
 });
 ```
 
@@ -84,6 +84,7 @@ The package includes TypeScript definitions for various components of the WordPr
 The WordPress Customize API is used to create and manage the WordPress Customizer interface. It provides a framework for creating settings, controls, panels, and sections, as well as handling the preview iframe.
 
 For more information about the WordPress Customize API, see:
+
 - [WordPress Developer Documentation](https://developer.wordpress.org/themes/customize-api/)
 - [WordPress Core Source Code](https://core.trac.wordpress.org/browser/trunk/src/js/_enqueues/wp/customize)
 
@@ -92,7 +93,8 @@ For more information about the WordPress Customize API, see:
 Files were exported from [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/wordpress__customize-browser).
 
 ### Additional Details
-* Dependencies: [@types/jquery](https://npmjs.com/package/@types/jquery)
+
+- Dependencies: [@types/jquery](https://npmjs.com/package/@types/jquery)
 
 ## Development
 
