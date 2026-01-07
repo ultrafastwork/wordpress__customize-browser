@@ -18,7 +18,10 @@
         "url": "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
         "directory": "types/wordpress__customize-browser"
     },
-    "scripts": {},
+    "scripts": {
+        "format": "prettier --write .",
+        "lint": "tsc --noEmit"
+    },
     "dependencies": {
         "@types/jquery": "^3.5.33"
     },
