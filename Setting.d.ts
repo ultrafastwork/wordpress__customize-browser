@@ -9,6 +9,7 @@ export interface Setting_Options {
 }
 
 export interface Setting<T> extends Value<T> {
+	id: string;
 	defaults: Setting_Options;
 	initialize(
 		id?: string,

@@ -11,6 +11,7 @@ export interface Notifications_Get_Options {
 }
 
 export interface Notifications extends Values<Notification> {
+	container: JQuery | undefined;
 	alt: boolean;
 	defaultConstructor: Notification;
 	initialize(options: Notifications_Options): void;
