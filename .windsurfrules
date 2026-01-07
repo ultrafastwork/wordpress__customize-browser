@@ -1,70 +1,236 @@
-You are Windsurf Cascade, an AI assistant with advanced problem-solving capabilities. Follow these rules precisely to execute tasks efficiently and accurately.
+# WordPress Customizer Browser Project Rules for AI Agents
+
+## Project Overview
+
+**WordPress Customizer Browser** is a TypeScript type definitions project for the WordPress Customizer API.
+
+### Purpose
+- Create accurate TypeScript types for the `wp.customize` API
+- Provide type safety and IntelliSense support for WordPress Customizer development
+
+### Tech Stack
+- **Runtime**: Node.js
+- **Languages**: TypeScript, JavaScript
+- **Environment**: WordPress + TypeScript
+
+### Constraints
+- Must maintain strict type accuracy and consistency
+- Must ensure compatibility with existing `wp.customize` API structure
+- Keep implementation modular and maintainable
+- Do not introduce unrelated logic or side effects
 
 ---
 
-## Core Operating Principles
+## Package Management
 
-### 1. Interpret Instructions Accurately
-
-- Read and understand all user instructions carefully.  
-- Ask for clarification when necessary.  
-- Identify all technical constraints and requirements clearly.  
-- Never go beyond the explicit scope of the instructions.  
-
-### 2. Execute and Validate Rigorously
-
-- Perform file and code operations in complete, optimized sequences.  
-- Continuously verify implementation quality during execution.  
-- Address issues promptly with integrated, relevant solutions.  
-- Do not add extra features, functions, or operations not requested.  
-
-### 3. Report and Confirm Clearly
-
-- Provide regular progress updates.  
-- Confirm decisions at key points.  
-- Report blockers early and propose practical solutions.  
+- **Package Manager**: Use `npm`
+- **Commands**:
+  - Install: `npm install`
+  - Add package: `npm install <package>`
+  - Add dev package: `npm install -D <package>`
+  - Update: `npm update`
 
 ---
 
-## Project Context & Standards
+## Security
 
-### 1. Project Overview
-
-- Name: WordPress Customizer API Type Definitions  
-- Objective: Create accurate TypeScript types for `wp.customize` API  
-- Environment: WordPress + TypeScript  
-
-### 2. Code Standards
-
-- Maintain strict type accuracy and consistency.  
-- Ensure compatibility with existing `wp.customize` API structure.  
-- Keep implementation modular and maintainable.  
-- Do not introduce unrelated logic or side effects.  
+- Security is a **critical priority** in all implementations
+- Never hardcode sensitive data (passwords, API keys, tokens)
+- Validate all user inputs
+- Handle errors safely and explicitly
+- Avoid exposing sensitive data
+- Follow principle of least privilege
 
 ---
 
-## Task Execution Workflow
+## Code Quality Standards
+
+### 1. Code Structure
+- Use strict TypeScript type checking
+- Maintain consistency with existing code patterns
+- Keep type definitions accurate to the WordPress Customizer API
+- Use clear and descriptive naming conventions
+
+### 2. Performance
+- Prefer reusable, modular type definitions
+- Avoid unnecessary complexity in type hierarchies
+- Optimize for developer experience and IntelliSense
+
+### 3. Documentation
+- Document complex types with JSDoc comments
+- Provide usage examples where helpful
+- Maintain clear type descriptions
+
+---
+
+## Development Workflow
 
 ### 1. Analyze
+- Identify all functional requirements
+- Confirm all constraints and dependencies
+- Review consistency with the existing WordPress setup
 
-- Identify all functional requirements.  
-- Confirm all constraints and dependencies.  
-- Review consistency with the existing WordPress setup.  
+### 2. Implementation
 
-### 2. Implement
+- Write clean, maintainable code
+- Follow existing code patterns in the project
+- Carefully read and interpret all user instructions
+- Ask for clarification when requirements are ambiguous or missing
 
-- Use an integrated and methodical implementation approach.  
-- Continuously verify correctness and quality.  
-- Ensure maintainability and clarity throughout the process.  
+### 3. Verification
 
-### 3. Final Review
+- **Always verify** your implementation works correctly
+- Test the implementation after making changes
+- Conduct integration and performance testing
 
-- Validate against all stated requirements.  
-- Ensure code quality, consistency, and accuracy.  
-- Deliver only within the defined scope.  
+### 4. Testing Loop
+
+```
+1. Implement changes
+2. Test the implementation
+3. Examine results
+4. If incorrect → fix → test again → examine again
+5. Repeat until correct
+```
 
 ---
 
-I will follow these rules strictly to deliver high-quality, scoped implementations.  
-I will never perform actions outside the provided instructions.  
-If anything is unclear or requires a decision, I will ask for confirmation.
+## Error Handling Protocol
+
+### 1. Error Analysis
+- Parse and analyze error messages
+- Identify scope and isolate root cause
+
+### 2. Solution Planning
+- Consider multiple solutions
+- Select the optimal fix based on risk and scope
+
+### 3. Fix & Validate
+- Implement the fix with minimal disruption
+- Test to verify resolution and check for regressions
+
+### 4. Documentation
+- Log the issue, solution, and mitigation strategy
+- Suggest future preventive measures
+- Share relevant insights or learnings
+
+---
+
+## Documentation Updates
+
+### After Completing Tasks
+
+Follow this **3-step process** for progress handoff and agent prompt:
+
+#### Step 1: UPDATE (Current Session)
+
+1. **Update Progress Handoff**
+   - File: `ai-docs/progress-handoffs/PROGRESS_HANDOFF.md`
+   - Document what was completed in the current session
+   - Include: tasks completed, files modified, current state
+
+2. **Update Agent Prompt**
+   - File: `ai-docs/prompts/AGENT_PROMPT.md`
+   - Update based on user's instructions for next session
+   - If no instructions provided, write: "Waiting for user's instruction."
+
+#### Step 2: ARCHIVE (Preserve Current Session)
+
+After updating, copy both files to archived versions:
+
+- **Naming format**: `{filename}_v{version}+{incremental}.md`
+- **Version**: Taken from `package.json` (e.g., `1.0.0`)
+- **Incremental**: +1 from the previous archive number
+
+**Examples**:
+- `PROGRESS_HANDOFF.md` → `PROGRESS_HANDOFF_v1.0.0+1.md`
+- `AGENT_PROMPT.md` → `AGENT_PROMPT_v1.0.0+1.md`
+- Next archive: `PROGRESS_HANDOFF_v1.0.0+2.md`, etc.
+
+#### Step 3: RENEW (Prepare for Next Session)
+
+After archiving, **reset the main files** for the next AI agent session:
+
+1. **Renew Progress Handoff** (`PROGRESS_HANDOFF.md`)
+   - Clear previous session content
+   - Prepare fresh template for next session
+
+2. **Renew Agent Prompt** (`AGENT_PROMPT.md`)
+   - Write user's instructions for the next AI agent
+   - If no instructions provided: "Waiting for user's instruction."
+
+---
+
+## Git Workflow
+
+### After All Tasks Complete
+
+1. **Stage changes**: `git add .`
+
+2. **Commit with proper format**:
+   - **Subject line**: < 50 characters, imperative mood
+   - **Description**: Detailed explanation (can be longer)
+   
+   ```bash
+   git commit -m "type: brief subject" -m "Detailed description here.
+   
+   - Change 1
+   - Change 2
+   - Change 3"
+   ```
+   
+   **Commit types**:
+   - `feat:` - New feature
+   - `fix:` - Bug fix
+   - `refactor:` - Code refactoring
+   - `docs:` - Documentation changes
+   - `chore:` - Maintenance tasks
+
+3. **Push to GitHub**: `git push`
+
+---
+
+## Session Handoff
+
+After pushing changes to GitHub, provide a copyable prompt for the next AI agent session:
+
+```
+Please execute the instructions in:
+ai-docs/prompts/AGENT_PROMPT.md
+```
+
+---
+
+## Project Structure
+
+```
+wordpress__customize-browser/
+├── ai-docs/
+│   ├── progress-handoffs/    # Session progress tracking
+│   │   └── PROGRESS_HANDOFF.md
+│   ├── prompts/              # Agent instructions
+│   │   └── AGENT_PROMPT.md
+│   └── temps/                # Temporary files
+├── src/                      # Source files
+│   └── types/                # TypeScript type definitions
+├── package.json
+└── README.md
+```
+
+---
+
+## Available Tools
+
+- Git MCP server
+- GitHub MCP server
+- Terminal commands
+
+---
+
+## Important
+
+- Maintain clarity and request confirmation when needed
+- Ensure high-quality, scoped, and standards-compliant implementations
+- Regularly report progress during multi-step tasks
+- Pause and confirm at critical decision points
+- Clearly report errors or blockers, and propose practical resolutions
